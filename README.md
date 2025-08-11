@@ -1,4 +1,4 @@
-# Operating Systems Lab – Techno Main Salt Lake - CSE(AI&ML)-B
+# Operating Systems Lab – Techno Main Salt Lake - CSE(AI&ML)
 
 This repository contains all programs, scripts, and frequently used Linux commands covered during the **Operating Systems Laboratory** coursework at [Your College Name].  
 It is intended as a central reference for lab work, assignments, and quick command look-ups while working in the Linux terminal (Ubuntu).
