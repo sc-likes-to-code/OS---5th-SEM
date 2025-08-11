@@ -1,4 +1,4 @@
-# Operating Systems Lab – [Your College Name]
+# Operating Systems Lab – Techno Main Salt Lake - CSE(AI&ML)-B
 
 This repository contains all programs, scripts, and frequently used Linux commands covered during the **Operating Systems Laboratory** coursework at [Your College Name].  
 It is intended as a central reference for lab work, assignments, and quick command look-ups while working in the Linux terminal (Ubuntu).
@@ -39,19 +39,8 @@ The goal of this repository is to:
    ./filename.sh
 
 ## 📖 Structure
-OS-Lab/
-│
-├── Programs/
-│   ├── experiment1.sh
-│   ├── experiment2.sh
-│   └── ...
-│
-├── Command-Notes/
-│   ├── basic-linux-commands.txt
-│   ├── ubuntu-shortcuts.txt
-│   └── ...
-│
-└── README.md
+<img width="269" height="314" alt="image" src="https://github.com/user-attachments/assets/5da407ef-c1b9-4114-8a7c-87e75d3a6956" />
+
 
 ## ⚠ Disclaimer
 This repository is maintained for educational purposes as part of the Operating Systems Lab coursework.
