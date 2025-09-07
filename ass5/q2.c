@@ -15,3 +15,9 @@ int main() {
     }
     return 0;
 }
+
+//output
+/*
+Child: PID = 10500
+Parent: Child finished, now parent runs.
+*/
