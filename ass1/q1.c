@@ -18,3 +18,9 @@ int main() {
 
     return 0;
 }
+
+//output:
+/*
+Parent process: PID = 10234, Child PID = 10235
+Child process: PID = 10235, Parent PID = 10234
+*/
