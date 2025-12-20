@@ -1,49 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <string.h>
 
 int main()
 {
-    int fd1[2], fd2[2], num, rev = 0, temp, digit, result;
-    pipe(fd1);
-    pipe(fd2);
+    int p[2], r, num, rev = 0, temp;
+    char buf[100];
 
-    printf("Enter number: ");
+    printf("\tCheck Palindrome Number using PIPE\n");
+
+    r = pipe(p);
+    if (r < 0)
+    {
+        printf("Failed to create unnamed pipe...\n");
+        exit(1);
+    }
+
+    printf("Enter a number: ");
     scanf("%d", &num);
 
-    if(fork() == 0)
+    // Process 1: send number
+    write(p[1], &num, sizeof(num));
+
+    // Process 2: read number and check palindrome
+    read(p[0], &num, sizeof(num));
+
+    temp = num;
+    while (temp != 0)
     {
-        close(fd1[1]);
-        read(fd1[0], &temp, sizeof(temp));
-        close(fd1[0]);
-
-        int original = temp;
-        while(temp > 0)
-        {
-            digit = temp % 10;
-            rev = rev * 10 + digit;
-            temp /= 10;
-        }
-
-        result = (original == rev);
-        write(fd2[1], &result, sizeof(result));
-        close(fd2[1]);
+        rev = rev * 10 + (temp % 10);
+        temp = temp / 10;
     }
+
+    if (num == rev)
+        strcpy(buf, "It is a Palindrome Number\n");
     else
-    {
-        close(fd1[0]);
-        write(fd1[1], &num, sizeof(num));
-        close(fd1[1]);
+        strcpy(buf, "It is Not a Palindrome Number\n");
 
-        read(fd2[0], &result, sizeof(result));
-        close(fd2[0]);
-
-        if(result)
-            printf("Palindrome number\n");
-        else
-            printf("Not palindrome\n");
-
-        wait(NULL);
-    }
+    printf("%s", buf);
     return 0;
 }
